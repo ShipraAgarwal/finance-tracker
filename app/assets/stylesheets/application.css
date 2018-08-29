@@ -15,3 +15,6 @@
  *= require_self
  
  */
+.indicator{
+	display: inline-block;
+}
