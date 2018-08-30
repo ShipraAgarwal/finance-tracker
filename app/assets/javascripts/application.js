@@ -21,4 +21,8 @@ $(document).ready(function(){
 	$("#stock-lookup-form").on('ajax:complete', function(event, data, status){
 		$("#result").html(data.responseText)
 	})
+
+	$("#friend-lookup-form").on('ajax:complete', function(event, data, status){
+		$("#fresult").html(data.responseText)
+	})
 })

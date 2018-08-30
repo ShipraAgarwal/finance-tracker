@@ -1,0 +1,15 @@
+<% if params[:action] == 'search' %>
+	<div class="symbol-warning indicator">
+		<%= bootstrap_flash %>
+	</div>
+<% end %>
+
+	<% if @user_friend.present? %>
+	
+	<div class="well indicator">
+		<strong>Name: </strong> <%= @user_friend.full_name %>&nbsp;&nbsp;
+		<strong>Name: </strong> <%= @user_friend.email %>
+		<%= link_to "ADD", friends_path(user:current_user, friend:@user_friend), class: "btn btn-xs btn-success",method: :post %>
+		
+	</div>
+<% end%>
