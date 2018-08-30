@@ -1,6 +1,4 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
@@ -9,7 +7,23 @@
 
 *{
 	font-family: 'EB Garamond', serif;
+	color:#AF8767;
 }
+
+.dark{
+	color:#221131;
+}
+.bgdark{
+	background-color:#221131;
+}
+.bg-grad{
+	background:linear-gradient(to right,#221131,#8a28a0);
+	color:#F4F3F8;
+	&:hover{
+	   color:white;
+	}	
+}
+
 h1, h2{
     font-family: 'Oswald', sans-serif;
 }
@@ -17,10 +31,10 @@ h1, h2{
 	padding:0;	
 }
 .left-padding{
-	padding-left:15px;
+	padding-left:5px;
 }
 .right-padding{
-	padding-right:15px;
+	padding-right:5px;
 }
 
 .sub-btn{
@@ -34,9 +48,40 @@ h1, h2{
 }
 
 .heading{
-	color:#221131;
-	    font-size:35px;
-		span{
-			font-size:60px;
+	font-size:35px;
+ 	span{
+		font-size:60px;
+		color:#221131;
 		}
 }
+
+.shared-links{
+a{
+	color:#221131;
+	font-size:16px;
+}
+}
+
+/*********************** HEADER CSS *********************/
+
+.navbar, ul{
+	color:white;
+	.menu-item{
+		color:white;
+		letter-spacing:1px;
+		transition:0.2s ease;
+		&:hover, &:active{
+		background-color:transparent;
+		transform:scale(1.1);
+		}
+	}
+
+	}
+.form-group{
+		color:#AF8767;
+		input{
+		   &:focus{
+		      border-color:#221131;
+		      }
+		}
+	}
