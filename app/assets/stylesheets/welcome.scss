@@ -2,6 +2,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
+@import "font-awesome";
 
 /******************* GLOBAL CSS *********************/
 
@@ -19,7 +20,7 @@
 .bg-grad{
 	background:linear-gradient(to right,#221131,#8a28a0);
 	color:#F4F3F8;
-	&:hover{
+	&:hover, &:active{
 	   color:white;
 	}	
 }
@@ -64,7 +65,7 @@ a{
 
 /*********************** HEADER CSS *********************/
 
-.navbar, ul{
+ul li{
 	color:white;
 	.menu-item{
 		color:white;
@@ -80,6 +81,7 @@ a{
 .form-group{
 		color:#AF8767;
 		input{
+		   font-size:16px;
 		   &:focus{
 		      border-color:#221131;
 		      }

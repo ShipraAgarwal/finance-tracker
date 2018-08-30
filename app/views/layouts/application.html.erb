@@ -38,31 +38,9 @@
   </head>
   <body>
 
-    <div class="navbar navbar-static-top bgdark">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">FinanceTracker</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <% if current_user %>
-            <ul class="nav navbar-nav">
-              <li><%= link_to "my_portfolio", my_portfolio_path, class:"menu-item" %></li>
-              <li><%= link_to "Profile", edit_user_registration_path, class:"menu-item" %></li>
-              <li><%= link_to "LINK3", "/path3", class:"menu-item" %></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li></li>
-            </ul>
-
-          <% else %>
-            <li><%= link_to "SignUp/SignIn", new_user_registration_path , class:"menu-item" %></li>
-          <% end %>
-        </div>
-      </div>
-    </div>
+   <header>
+     <%= render 'layouts/header' %>
+   </header>
 
     <div class="container">
       <div class="row">
