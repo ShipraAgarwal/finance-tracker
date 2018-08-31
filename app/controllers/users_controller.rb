@@ -9,8 +9,10 @@ class UsersController < ApplicationController
    end
 
    def profile
+      @user = User.find(params[:format])
+      @user_stocks = @user.stocks
+      @friends = @user.friends
       render 'users/profile'
-
    end
 
    def search

@@ -13,7 +13,7 @@
 			<tr>
 				<td><%= friend.full_name %></td>
 				<td><%= friend.email %></td>
-				<td><%= link_to "profile", profile_path(friend), method: :get, class:"btn btn-success" %></td>
+				<td><%= link_to "profile", profile_path(friend.id), class:"btn btn-success" %></td>
 				<% if @user.id == current_user.id %>
 					<td><%= link_to "unfriend", friend_path(friend), method: :delete, data: {confirm: "are you sure?"}, class:"btn btn-danger" %></td>
 				<% end %>

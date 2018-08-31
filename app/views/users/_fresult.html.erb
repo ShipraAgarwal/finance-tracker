@@ -6,11 +6,13 @@
 
 	<% if @user_friend.present? %>
 	<% @user_friend.each do |friend| %>
-		<div class="well indicator">
-			<strong>Name: </strong> <%= friend.full_name %>&nbsp;&nbsp;
-			<strong>Name: </strong> <%= friend.email %>
-			<%= link_to "ADD", friends_path(user:current_user, friend: friend), class: "btn btn-xs btn-success",method: :post %>
-			
-		</div>
+		<% if !(friend == current_user) %>
+			<div class="well indicator">
+				<strong>Name: </strong> <%= friend.full_name %>&nbsp;&nbsp;
+				<strong>Name: </strong> <%= friend.email %>
+				<%= link_to "ADD", friends_path(user:current_user, friend: friend), class: "btn btn-xs btn-success",method: :post %>
+				
+			</div>
+		<% end %>
 	<%end%>
 <% end%>

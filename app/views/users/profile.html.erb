@@ -1,0 +1,12 @@
+<h1 class="heading dark">
+	<%= @user.full_name %>
+</h1>
+<% if @user.id == current_user.id %>
+	<%= link_to "Edit Profile", edit_user_registration_path %>
+<% end %>
+<h2 class="dark"> Tracked Stocks</h2>
+<%= render 'stocks/list' %>
+
+
+<h2 class="dark"> Friends </h2>
+<%= render 'friends/friend_list' %>

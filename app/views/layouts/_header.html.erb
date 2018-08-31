@@ -9,8 +9,9 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <% if current_user %>
             <ul class="nav navbar-nav">
+            <li><%= link_to "Profile", profile_path(current_user.id), class:"menu-item" %></li>
               <li><%= link_to "my_portfolio", my_portfolio_path, class:"menu-item" %></li>
-              <li><%= link_to "Profile", edit_user_registration_path, class:"menu-item" %></li>
+              
               <li><%= link_to "My Friends", my_friends_path, class:"menu-item" %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
