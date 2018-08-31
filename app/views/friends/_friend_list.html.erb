@@ -1,0 +1,23 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th class="dark">NAME</th>
+			<th class="dark">EMAIL</th>
+			<% if @user.id == current_user.id %>
+				<th class="dark">ACTIONS</th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<% @friends.each do |friend| %>
+			<tr>
+				<td><%= friend.full_name %></td>
+				<td><%= friend.email %></td>
+				<td><%= link_to "profile", profile_path(friend), method: :get, class:"btn btn-success" %></td>
+				<% if @user.id == current_user.id %>
+					<td><%= link_to "unfriend", friend_path(friend), method: :delete, data: {confirm: "are you sure?"}, class:"btn btn-danger" %></td>
+				<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -27,4 +27,21 @@ class User < ApplicationRecord
    def can_add_stock?(ticker_symbol)
    	  (max_limit? && !stock_already_exist?(ticker_symbol))
    end
+
+  # for finding users from user_lookup_form
+   def self.first_name_find(fname)
+     where("first_name like ?", "%#{fname}%")
+   end
+
+   def self.last_name_find(lname)
+     where("last_name like ?", "%#{lname}%")
+   end
+
+   def self.email_find(mail)
+     where("email like ?", "%#{mail}%")
+   end
+
+   def self.search(name)
+      (first_name_find(name)+last_name_find(name)+email_find(name)).uniq
+   end
 end

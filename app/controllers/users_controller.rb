@@ -4,7 +4,13 @@ class UsersController < ApplicationController
    	@user_stocks = current_user.stocks
    end
    def my_friends
+        @user = current_user
    	  @friends = current_user.friends
+   end
+
+   def profile
+      render 'users/profile'
+
    end
 
    def search
@@ -12,7 +18,7 @@ class UsersController < ApplicationController
    			flash[:danger] = "enter an email"
    			redirect_to my_friends_path
    		else
-   			@user_friend = User.find_by_email(params[:friend])
+   			@user_friend = User.search(params[:friend])
    			
    		end
    		respond_to do |format|
@@ -20,4 +26,5 @@ class UsersController < ApplicationController
    		end
 
    end
+
 end
